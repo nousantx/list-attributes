@@ -63,6 +63,7 @@ export const standardAttributes: string[] = [
   'draggable',
   'enterkeyhint',
   'hidden',
+  'http-equiv',
   'id',
   'inputmode',
   'is',

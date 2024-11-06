@@ -7,9 +7,9 @@ import terser from '@rollup/plugin-terser'
 
 const packageJson = JSON.parse(fs.readFileSync(path.resolve('package.json'), 'utf-8'))
 
-const name = '__ignore_attr'
+const name = '__attr_list'
 const banner = `/*!
- * ${packageJson.name} v${packageJson.version} | Licensed under the table.
+ * ${packageJson.name} v${packageJson.version} | Licensed under the table. (use whatever you please)
  *
  * NOuSantx do that? ¯\\_(ツ)_/¯
  */`
@@ -58,9 +58,23 @@ const config = {
             preserve_annotations: true
           },
           keep_classnames: true,
-          keep_fnames: /ariaAttributes|standardAttributes|vueAttributes|angularAttributes|reactAttributes|fullAttributes/,
-         })
+          keep_fnames:
+            /ariaAttributes|standardAttributes|vueAttributes|angularAttributes|reactAttributes|fullAttributes/
+        })
       ]
+    },
+    {
+      file: 'dist/index.cjs',
+      format: 'cjs',
+      exports: 'named',
+      banner
+    },
+    {
+      file: 'dist/index.min.cjs',
+      format: 'cjs',
+      banner,
+      exports: 'named',
+      plugins: [terser()]
     },
     {
       file: 'dist/index.esm.js',

@@ -1,23 +1,19 @@
 {
-  "name": "@nousantx/ignore-attribute",
+  "name": "@nousantx/list-attribute",
   "version": "0.1.0",
-  "description": "Some utils, literally.",
+  "description": "List of attributes in html and other JavaScript framework",
   "author": "NOuSantx <nousantx@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nousantx/someutils.git"
+    "url": "git+https://github.com/nousantx/list-attributes.git"
   },
   "type": "module",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.min.cjs",
   "module": "./dist/index.esm.min.js",
   "browser": "./dist/index.umd.min.js",
-  "files": [
-    "dist/*",
-    "LICENSE",
-    "package.json"
-  ],
+  "files": ["dist/*", "LICENSE", "package.json"],
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w"
